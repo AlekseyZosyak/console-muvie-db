@@ -16,5 +16,7 @@ const personalMuvieDB = {
 personalMuvieDB.movies[lookLastFilm1] = likeFilm1;
 personalMuvieDB.movies[lookLastFilm2] = likeFilm2;
 
+const a = null;
+
 
 console.log(personalMuvieDB);
