@@ -1,22 +1,45 @@
 
-const numberOfFilms = +prompt("Сколько фильмов вы смотрели?", "");
-let lookLastFilm1 = prompt("Один из последних фильмов?", "");
-let likeFilm1 = +prompt("На сколько его оцените?", "");
-let lookLastFilm2 = prompt("Один из последних фильмов?", "");
-let likeFilm2 = +prompt("На сколько его оцените?", "");
+const buttonPlay = document.getElementById('play');
+buttonPlay.addEventListener('click', start);
 
-const personalMuvieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
+function start() {
+    let numberOfFilms = +prompt("Сколько фильмов вы смотрели?", "");
+
+    const personalMuvieDB = {
+        count: numberOfFilms,
+        movies: {},
+        actors: {},
+        genres: [],
+        privat: false
+    }
+
+    for (let i = 0; i < 2; i++) {
+        let lookLastFilm = prompt("Один из последних фильмов?", "");
+        if (lookLastFilm === ' ') {
+            console.log('ERROR');
+            break;
+        }
+        let likeFilm = +prompt("На сколько его оцените?", "");
+        if (likeFilm === ' ') {
+            console.log('ERROR');
+            break;
+        }
+
+        personalMuvieDB.movies[lookLastFilm] = likeFilm;
+        personalMuvieDB.movies[lookLastFilm] = likeFilm;
+    }
+
+
+    console.log(personalMuvieDB);
 }
 
-personalMuvieDB.movies[lookLastFilm1] = likeFilm1;
-personalMuvieDB.movies[lookLastFilm2] = likeFilm2;
-
-const a = null;
 
 
-console.log(personalMuvieDB);
+
+
+
+
+
+
+
+
