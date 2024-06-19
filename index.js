@@ -15,7 +15,7 @@ function start() {
         genres: [],
         privat: true,
 
-        writeYourGenres() {
+        writeYourGenres: function () {
             for (let i = 0; i < 3; i++) {
                 const genres = prompt(`Ваш любимый жанр под номером : ${i + 1} ?`).trim();
                 if (genres == '' || genres == null) {
@@ -27,7 +27,7 @@ function start() {
             }
         },
 
-        rememberMyFilms() {
+        rememberMyFilms: function () {
             for (let i = 0; i < 2; i++) {
                 let a = prompt(`Один из последних фильмов под номером : ${i + 1}?`, '').trim();
                 let b = +prompt(`На сколько его оцените - фильм под номером : ${i + 1}?`, '').trim();
@@ -40,7 +40,7 @@ function start() {
             }
         },
 
-        detectPersonalLevel() {
+        detectPersonalLevel: function () {
             console.log(personalMuvieDB);
             if (personalMuvieDB.count < 10) {
                 console.log("просмотренно довольно мало фильмов");
@@ -53,11 +53,11 @@ function start() {
             }
         },
 
-        showMyDB(hidden) {
+        showMyDB: function (hidden) {
             return (!hidden) ? console.log(`Главный объект программы! ${console.log(personalMuvieDB)}`) : null;
         },
 
-        toggleVisibleMyDB(hidden) {
+        toggleVisibleMyDB: function (hidden) {
             personalMuvieDB.privat = (!hidden) ? true : false;
         }
     }
