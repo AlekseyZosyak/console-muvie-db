@@ -1,19 +1,18 @@
-const buttonPlay = document.getElementById('play');
-buttonPlay.addEventListener('click', () => start());
 
-let numberOfFilms = null;
-
-function start() {
-    do {
-        numberOfFilms = +prompt("Сколько фильмов вы смотрели?", "").trim();
-    } while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms));
 
     const personalMuvieDB = {
-        count: numberOfFilms,
+        count: null,
         movies: {},
         actors: {},
         genres: [],
         privat: true,
+
+        start: function () {
+            const { count } = personalMuvieDB;
+            do {
+                count = +prompt("Сколько фильмов вы смотрели?", "").trim();
+            } while (count == '' || count == null || isNaN(count));
+        },
 
         writeYourGenres: function () {
             for (let i = 0; i < 3; i++) {
@@ -61,10 +60,3 @@ function start() {
             personalMuvieDB.privat = (!hidden) ? true : false;
         }
     }
-    // personalMuvieDB.writeYourGenres();
-    // personalMuvieDB.rememberMyFilms();
-    // personalMuvieDB.detectPersonalLevel();
-    // personalMuvieDB.toggleVisibleMyDB(personalMuvieDB.privat);
-    // personalMuvieDB.showMyDB(personalMuvieDB.privat);
-
-}
